@@ -19,7 +19,12 @@ public class navePrueba : MonoBehaviour
     private bool rotationH = false;
     private bool rotationV = false;
     private Rigidbody rb;
-    // Start is called before the first frame update
+
+
+    private bool isPropelling = false;
+    private bool isTurnLeft = false;
+    private bool isTurnRigth = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,6 +40,12 @@ public class navePrueba : MonoBehaviour
         Propulsar();
         Rotacion();
         MoverCamera();
+    }
+
+    private void manageInput()
+    {
+        isPropelling = Input.GetAxis("Vertical") > 0 ? true : false;
+        // isTurnRigth = 
     }
     private void Propulsar()
     {
@@ -98,12 +109,12 @@ public class navePrueba : MonoBehaviour
     }
     private void MoverCamera()
     {
-        float cameraTargetY = Mathf.Max(transform.position.y + (rb.velocity.y<-1 ? -12.0f : 12.0f),cameraLowerLimit);
+        // float cameraTargetY = Mathf.Max(transform.position.y + (rb.velocity.y<-1 ? -12.0f : 12.0f),cameraLowerLimit);
 
-        //cambio sueve de camara cuando sube o baja
-        //float newCameraY = Mathf.SmoothDamp(mainCamera.position.y, cameraTargetY, ref velocityY, smoothTime);
+        // //cambio sueve de camara cuando sube o baja
+        // //float newCameraY = Mathf.SmoothDamp(mainCamera.position.y, cameraTargetY, ref velocityY, smoothTime);
 
-        Vector3 cameraTargetPosition = new Vector3(mainCamera.position.x,cameraTargetY,mainCamera.position.z);
-        mainCamera.position = Vector3.Lerp(mainCamera.position,cameraTargetPosition,Time.deltaTime*5f);
+        // Vector3 cameraTargetPosition = new Vector3(mainCamera.position.x,cameraTargetY,mainCamera.position.z);
+        // mainCamera.position = Vector3.Lerp(mainCamera.position,cameraTargetPosition,Time.deltaTime*5f);
     }
 }
