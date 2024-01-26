@@ -42,4 +42,8 @@ public class ExampleEnemy : MonoBehaviour
 
     }
 
+    public void doAnithing(){
+        
+    }
+
 }

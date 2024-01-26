@@ -57,13 +57,13 @@ public class navePrueba : MonoBehaviour
             float currenSpeedV = rb.velocity.y;//limite de velocidad en vertical
             if(currenSpeedV < maxSpeedV)
             {
-                rb.AddRelativeForce(new Vector3(0, prop * fV * Time.deltaTime, 0));
+                rb.AddForce(new Vector3(0, prop * fV * Time.deltaTime, 0));
             }
             //sonido
         }else if (prop == 0)
         {
             rb.useGravity = false;
-            rb.AddRelativeForce(new Vector3(0,-fallingSpeed * Time.deltaTime, 0));
+            rb.AddForce(new Vector3(0,-fallingSpeed * Time.deltaTime, 0));
             //sin sonido
         }
         else
@@ -78,7 +78,7 @@ public class navePrueba : MonoBehaviour
         float movH = Input.GetAxis("Horizontal");
         float currenSpeedH = rb.velocity.x;
         // (currenSpeedH < maxSpeedH)//&& currenSpeedH > minSpeedH
-        rb.AddRelativeForce(new Vector3(movH * fH * Time.deltaTime, 0, 0));
+        rb.AddForce(new Vector3(movH * fH * Time.deltaTime, 0, 0));
         if (movH>0 && rotationH==false)
         {
             transform.Rotate(new Vector3(0, -35, 0));
