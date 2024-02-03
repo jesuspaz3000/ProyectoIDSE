@@ -60,7 +60,6 @@ public class Shooter : MonoBehaviour
                 {
                     Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
                     shot = true;
-                    GlobalParticleSystems.Instance.PlayStartLightShotExplosion(bulletSpawner.position);
                 }
             }
 

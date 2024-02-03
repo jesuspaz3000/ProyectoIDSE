@@ -1,40 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    private float initialSpeed = 30;
+    private float InitialSpeed = 30;
+    public GameObject StartShotPrefab;
+    public GameObject ExplosionPrefab;
 
-    private Rigidbody rb; 
+    private ParticleEffect startShotParticles;
+    private ParticleEffect explosionParticles;
+
+
+    protected Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // Asegúrate de tener un Rigidbody adjunto
-        if (rb == null)
-        {
-            Debug.LogError("Se requiere un Rigidbody en el objeto.");
-        }
+        if (rb == null) Debug.LogError("Se requiere un Rigidbody en el objeto.");
+        if (StartShotPrefab == null) Debug.LogError("Se requiere un StartShotParticles en el objeto.");
+        if (ExplosionPrefab == null) Debug.LogError("Se requiere un ExplosionParticles en el objeto.");
 
-        // Establece la velocidad constante
-        rb.velocity = transform.up * initialSpeed;
+        Initialize();
+    }
 
+    protected void Initialize()
+    {   
+        PlayStartShotExplosion();
+        rb.velocity = transform.up * InitialSpeed;
         Destroy(gameObject, 10);
     }
-
-    void Update()
-    {
-        // transform.Translate(Vector3.up * initialSpeed * Time.deltaTime);
-    }
-
-    // void OnCollisionEnter(Collision other)
-    // {
-    //     print("OnCollisionEnter");
-    //     if (other.gameObject.CompareTag("Nave"))
-    //     {
-    //         Explode();
-    //     }
-    // }
 
     void OnTriggerEnter(Collider other)
     {
@@ -47,12 +42,22 @@ public class Shot : MonoBehaviour
 
     void Explode()
     {
-        print("Explosión");
-        // Ajusta la posición de las partículas y activa la explosión
-
-        GlobalParticleSystems.Instance.PlayExplosion(transform.position);
-        
-        // Destruye la bala
+        print("Explosión: " + transform.position);
+        PlayShotFinalExplosion();
         Destroy(gameObject);
     }
+
+    private void PlayStartShotExplosion(){
+        GameObject explosion = Instantiate(StartShotPrefab, transform.position, Quaternion.identity);
+        startShotParticles = explosion.GetComponentInChildren<ParticleEffect>();
+        if (startShotParticles == null) Debug.LogError("Se requiere un startShotParticles en el objeto.");
+        // startShotParticles.play(); 
+    }
+    private void PlayShotFinalExplosion(){
+        GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
+        explosionParticles = explosion.GetComponentInChildren<ParticleEffect>();
+        if (explosionParticles == null) Debug.LogError("Se requiere un explosionParticles en el objeto.");
+        explosionParticles.play();
+    }
+
 }

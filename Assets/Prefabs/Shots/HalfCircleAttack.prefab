@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8025750479646271708}
   - component: {fileID: 8407688492791569971}
-  - component: {fileID: 7595895021467138646}
   - component: {fileID: 7915557961786210746}
+  - component: {fileID: 8542971008130263903}
   m_Layer: 0
-  m_Name: attack2
+  m_Name: HalfCircleAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7366548702755754832}
   - {fileID: 8183286186125157475}
@@ -55,20 +55,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 0.4, z: 1}
-  m_Center: {x: 0, y: 0.24, z: 0}
---- !u!114 &7595895021467138646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295316256617485282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd22355742c9c14e8e8b10e6a628010, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 5.36, y: 0.4, z: 1}
+  m_Center: {x: 0, y: -0, z: 0}
 --- !u!54 &7915557961786210746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -96,6 +84,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8542971008130263903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295316256617485282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92984e547ab3c354e901f388bd9fd49a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartShotPrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
+    type: 3}
+  ExplosionPrefab: {fileID: 281319859439996211, guid: 58c82217a510a7b42b73367e7c275991,
+    type: 3}
+  incrementoEscala: {x: 3, y: 3, z: 3}
 --- !u!1 &2803162596075128772
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +175,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.15
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -257,7 +262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8183286186125157475
 Transform:
   m_ObjectHideFlags: 0
@@ -267,7 +272,7 @@ Transform:
   m_GameObject: {fileID: 2971580106030934584}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.21, y: 0, z: 0}
+  m_LocalPosition: {x: 0.21, y: 0.13, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -316,11 +321,11 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Time: 0.2
+  m_Time: 0.1
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 5
+    widthMultiplier: 25
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -399,7 +404,7 @@ GameObject:
   - component: {fileID: 3256782100325994818}
   - component: {fileID: 1667724383266911834}
   m_Layer: 0
-  m_Name: VFX_Half_Circle
+  m_Name: HalfCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,8 +419,8 @@ Transform:
   m_GameObject: {fileID: 3894618160094030325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1.22, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8025750479646271708}
@@ -455,7 +460,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 2800000, guid: 94ca22834a9b561409369d8889fbc00d, type: 3}
+        m_Name: Texture
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!73398921 &1667724383266911834

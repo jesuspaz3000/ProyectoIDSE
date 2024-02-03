@@ -695,6 +695,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: attack2
       objectReference: {fileID: 0}
+    - target: {fileID: 3256782100325994818, guid: 71b38b9b988101d49998049441b72cd2,
+        type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256782100325994818, guid: 71b38b9b988101d49998049441b72cd2,
+        type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Name
+      value: Texture
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256782100325994818, guid: 71b38b9b988101d49998049441b72cd2,
+        type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Value
+      value: 
+      objectReference: {fileID: 2800000, guid: 762bec7cd61c06340816d3fabd1b0e5b, type: 3}
+    - target: {fileID: 3256782100325994818, guid: 71b38b9b988101d49998049441b72cd2,
+        type: 3}
+      propertyPath: m_PropertySheet.m_NamedObject.m_Array.Array.data[0].m_Overridden
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8025750479646271708, guid: 71b38b9b988101d49998049441b72cd2,
         type: 3}
       propertyPath: m_LocalPosition.x

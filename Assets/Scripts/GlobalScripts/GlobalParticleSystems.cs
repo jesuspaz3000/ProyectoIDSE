@@ -34,23 +34,23 @@ public class GlobalParticleSystems : MonoBehaviour
         // Example: You can update particle systems here if needed
     }
 
-    public void PlayExplosion(Vector3 position)
-    {
-        // Instantiate and play the explosion particle system
-        ParticleSystem explosion = Instantiate(explosionParticles, position, Quaternion.identity);
-        explosion.Play();
+    // public void PlayExplosion(Vector3 position)
+    // {
+    //     // Instantiate and play the explosion particle system
+    //     ParticleSystem explosion = Instantiate(explosionParticles, position, Quaternion.identity);
+    //     explosion.Play();
 
-        // Emitir las partículas en una ráfaga
+    //     // Emitir las partículas en una ráfaga
         
-        // explosionParticles.transform.position = position;
-        // explosionParticles.Play();
-        // explosionParticles.Emit(3);
-        print("  _> "+explosionParticles.transform.position);
-        // Optionally, you can configure or manipulate the explosion particle system here
-    }
-    public void PlayStartLightShotExplosion(Vector3 position){
+    //     // explosionParticles.transform.position = position;
+    //     // explosionParticles.Play();
+    //     // explosionParticles.Emit(3);
+    //     print("  _> "+explosionParticles.transform.position);
+    //     // Optionally, you can configure or manipulate the explosion particle system here
+    // }
+    // public void PlayStartLightShotExplosion(Vector3 position){
         
-        ParticleSystem explosion = Instantiate(startShotParticles, position, Quaternion.identity);
-        explosion.Play();
-    }
+    //     ParticleSystem explosion = Instantiate(startShotParticles, position, Quaternion.identity);
+    //     explosion.Play();
+    // }
 }
