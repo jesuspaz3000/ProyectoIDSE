@@ -4,29 +4,38 @@ using UnityEngine;
 
 public class CreatePlaneByContact : MonoBehaviour
 {
-    public GameObject planePrefap;
+    public GameObject planePrefab;
+    private GameObject followObject;
+    
     private bool nuevoPlano = false;
-    // Start is called before the first frame update
+    private float planeSize;
+    public float porcentajeCreacion = 0.8f;
+
+    void Start()
+    {
+        // Obtén el tamaño del objeto actual en el eje vertical
+        planeSize = transform.localScale.y*20;
+        followObject = GlobalObjects.Instance.NavePrincipal;
+    }
+
     void Update()
     {
-        // Obt�n la posici�n actual de la nave
-        if (GameObject.FindWithTag("Player")!=null)
+        float posicionNaveY = followObject.transform.position.y;
+
+        // Calcula la posición Y en la que se debe crear un nuevo plano
+        float nuevaPosicionY = transform.position.y + planeSize;
+
+        // Verifica si la nave ha pasado la posición Y para crear un nuevo plano
+        if (posicionNaveY > transform.position.y + ((planeSize * porcentajeCreacion) - planeSize / 2)  && !nuevoPlano)
         {
-            float posicionNaveZ = GameObject.FindWithTag("Player").transform.position.z;
-
-            // Verifica si la nave ha pasado la mitad del plano actual
-            if (posicionNaveZ > transform.position.z - 10 && nuevoPlano == false)
-            {
-                // Crea un nuevo plano de fondo
-                GameObject nuevoPlanoFondo = Instantiate(planePrefap, new Vector3(0, 0, transform.position.z + 60), Quaternion.identity);
-                nuevoPlano = true;
-
-            }
-            else if (posicionNaveZ > transform.position.z + 45)
-            {
-                // Destruye el plano actual
-                Destroy(gameObject);
-            }
+            Quaternion rotation = planePrefab.transform.rotation;
+            GameObject nuevoPlanoFondo = Instantiate(planePrefab, new Vector3(0, nuevaPosicionY, transform.position.z), rotation);
+            nuevoPlano = true;
+        }
+        else if (posicionNaveY > transform.position.y + planeSize)
+        {
+            // Destruye el plano actual si la nave lo ha pasado completamente
+            Destroy(gameObject);
         }
     }
 }
