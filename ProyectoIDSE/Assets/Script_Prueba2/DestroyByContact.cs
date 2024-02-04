@@ -8,7 +8,12 @@ public class DestroyByContact : MonoBehaviour
     public GameObject explosionAsteroide;
     public GameObject explosionPlayer;
 
+    // Vida
+    public int vida;
+
+    // Puntuacion
     public int scoreValue;
+    public int scoreDaño;
     private GameController gameController;
 
     void Start()
@@ -37,9 +42,31 @@ public class DestroyByContact : MonoBehaviour
         else if (other.CompareTag("Disparo"))
         {
             //Disminuir vida y destruirse
-            gameController.AddScore(scoreValue);
+            if (vida>1)
+            {
+                vida -= 1;
+                gameController.AddScore(scoreDaño);
+                Instantiate(explosionAsteroide, transform.position, transform.rotation);
+                Destroy(other.gameObject);
+            }
+            else
+            {
+                vida -= 1;
+                gameController.AddScore(scoreValue);
+                Instantiate(explosionAsteroide, transform.position, transform.rotation);
+                Destroy(other.gameObject);
+                Destroy(gameObject);
+            }
+        }
+        else if (other.CompareTag("Asteroide"))
+        {
             Instantiate(explosionAsteroide, transform.position, transform.rotation);
-            Destroy(other.gameObject);
+            if (gameObject.CompareTag("Enemigo"))
+            {
+                vida -= 1;
+                Destroy(other.gameObject);
+                return;
+            }
             Destroy(gameObject);
         }
         else

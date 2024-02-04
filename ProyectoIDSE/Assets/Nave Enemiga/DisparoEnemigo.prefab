@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 5451325504996392482}
   - component: {fileID: 3193510576432361966}
   - component: {fileID: 8796591364362818419}
+  - component: {fileID: 6427538371348761310}
   m_Layer: 0
-  m_Name: Disparo
-  m_TagString: Disparo
+  m_Name: DisparoEnemigo
+  m_TagString: DisparoEnemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 15, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4692502733242958450}
@@ -50,7 +51,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nave: {fileID: 0}
-  direccion: 1
+  direccion: -1
   speedV: 20
 --- !u!54 &8796591364362818419
 Rigidbody:
@@ -96,8 +97,25 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6427538371348761310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5937810338689565447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd58f249a3fe0846bff2d01638b2cf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionAsteroide: {fileID: 100004, guid: 2857e183f4cd3df4e9096e5b578bd32f, type: 3}
+  explosionPlayer: {fileID: 100002, guid: 62ea8a5ca94c546f29ba6dea8f379a7b, type: 3}
+  vida: 1
+  scoreValue: 0
+  "scoreDa\xF1o": 0
 --- !u!1001 &2413744283689063984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,11 +154,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6944631974595499074, guid: 0d4f2367ea7bd9f43b67a2a1e6117f8d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6944631974595499074, guid: 0d4f2367ea7bd9f43b67a2a1e6117f8d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 6944631974595499074, guid: 0d4f2367ea7bd9f43b67a2a1e6117f8d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -152,7 +170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6944631974595499074, guid: 0d4f2367ea7bd9f43b67a2a1e6117f8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6944631974595499074, guid: 0d4f2367ea7bd9f43b67a2a1e6117f8d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

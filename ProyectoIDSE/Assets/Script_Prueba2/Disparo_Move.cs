@@ -6,6 +6,7 @@ public class Disparo_Move : MonoBehaviour
 {
     private Rigidbody rb;
     public GameObject nave;
+    public int direccion;
     public float speedV = 20.0f;
     // Start is called before the first frame update
     void Awake()
@@ -16,6 +17,6 @@ public class Disparo_Move : MonoBehaviour
     // Update is called once per frame
     public void SetNaveVelocity(Vector3 naveVelocity)
     {
-        rb.velocity = transform.forward*speedV + naveVelocity;
+        rb.velocity = transform.forward*speedV*direccion + naveVelocity;
     }
 }
