@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 489599613708823815}
   - component: {fileID: 5750767115162397029}
   - component: {fileID: 929409208993002483}
-  - component: {fileID: 6640261688982751310}
   - component: {fileID: 4858359600093584440}
   m_Layer: 0
   m_Name: BackgoundSpace1
@@ -30,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 12, y: 3, z: 6}
+  m_LocalScale: {x: 50, y: 1, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -85,28 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6640261688982751310
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092601752326810283}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &4858359600093584440
 MonoBehaviour:
   m_ObjectHideFlags: 0

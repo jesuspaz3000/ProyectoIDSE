@@ -43,34 +43,45 @@ public class MovimientoNave : MonoBehaviour
         // Aplicar fuerzas en los ejes X e Y hasta alcanzar la velocidad máxima
         if (Mathf.Abs(velocidadActualX) < velocidadMaximaX)
         {
-           fuerzaAplicar_x = fuerzaAplicadaX;
-        } else if(velocidadActualX >= velocidadMaximaX ){
-            if(fuerzaAplicadaX < 0){
+            fuerzaAplicar_x = fuerzaAplicadaX;
+        }
+        else if (velocidadActualX >= velocidadMaximaX)
+        {
+            if (fuerzaAplicadaX < 0)
+            {
                 fuerzaAplicar_x = fuerzaAplicadaX;
             }
-        } else if(velocidadActualX <= velocidadMaximaX ){
-            if(fuerzaAplicadaX > 0){
+        }
+        else if (velocidadActualX <= velocidadMaximaX)
+        {
+            if (fuerzaAplicadaX > 0)
+            {
                 fuerzaAplicar_x = fuerzaAplicadaX;
             }
         }
 
-        if (Mathf.Abs(velocidadActualY) < velocidadMaximaY || 
+        if (Mathf.Abs(velocidadActualY) < velocidadMaximaY ||
             velocidadActualY >= velocidadMaximaY && fuerzaAplicadaY < 0 ||
             velocidadActualY <= velocidadMaximaY && fuerzaAplicadaY > 0
             )
         {
             fuerzaAplicar_y = fuerzaAplicadaY;
         }
-        rb.AddForce(new Vector3(fuerzaAplicar_x, fuerzaAplicar_y, 0), ForceMode.VelocityChange);
-        rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
+        if (GlobalObjects.Instance.gameController.energia > 0)
+            rb.AddForce(new Vector3(fuerzaAplicar_x, fuerzaAplicar_y, 0), ForceMode.VelocityChange);
+        // rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
 
         if (movimiento == Vector3.zero)
         {
             rb.velocity = new Vector3(
                 Mathf.Lerp(rb.velocity.x * 0.6f, 0f, Time.deltaTime * frenadoRapido),
-                Mathf.Lerp(rb.velocity.y* 0.6f, 0f, Time.deltaTime * frenadoRapido),
+                Mathf.Lerp(rb.velocity.y * 0.6f, 0f, Time.deltaTime * frenadoRapido),
                 0f
             );
+        }
+        else
+        {
+            GlobalObjects.Instance.gameController.DecreaseEnergy(movimiento.magnitude * Time.deltaTime);
         }
     }
 

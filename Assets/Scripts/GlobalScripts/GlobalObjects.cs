@@ -4,6 +4,8 @@ public class GlobalObjects : MonoBehaviour
 {
     private static GlobalObjects _instance;
     public GameObject NavePrincipal;
+    public PlayerGameInterface playerGameInterface;
+    public GameController gameController;
     public static GlobalObjects Instance
     {
         get

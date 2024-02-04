@@ -3,22 +3,22 @@ using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Timeline;
-using TMPro;
 using System;
 using Unity.VisualScripting;
 
-public class Shooter : MonoBehaviour
+public class ShooterPlayer : MonoBehaviour
 {
     private bool isShooting = false;
     private bool shot = true;
     public GameObject bulletPrefab;
-    public TextMeshPro textoTiempoDisparo;
+    
 
     const string BULLET_SPAWNER = "BulletSpawner";
 
-    private float bulletReloadTime = 0.5f;
-    private float _tiempoPasadoDesdeUltimaBala = 0.5f;
-    public float tiempoPasadoDesdeUltimaBala
+    protected float bulletReloadTime = 0.5f;
+    protected float _tiempoPasadoDesdeUltimaBala = 0.5f;
+    
+    virtual protected float tiempoPasadoDesdeUltimaBala
     {
         get { return _tiempoPasadoDesdeUltimaBala; }
         set
@@ -27,15 +27,13 @@ public class Shooter : MonoBehaviour
             if (_tiempoPasadoDesdeUltimaBala != value)
             {
                 _tiempoPasadoDesdeUltimaBala = value;
-                // Notifica a los observadores que el valor ha cambiado
-                OnTimerChange(_tiempoPasadoDesdeUltimaBala);
             }
         }
     }
 
 
 
-    private Transform bulletSpawner;
+    protected Transform bulletSpawner;
     private Rigidbody rb;
 
     void Start()
@@ -58,7 +56,7 @@ public class Shooter : MonoBehaviour
             {
                 if (tiempoPasadoDesdeUltimaBala > bulletReloadTime)
                 {
-                    Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+                    Shot();
                     shot = true;
                 }
             }
@@ -80,8 +78,8 @@ public class Shooter : MonoBehaviour
         isShooting = false;
     }
 
-    private void OnTimerChange(float timeRest)
-    {
-        textoTiempoDisparo.text = "" + timeRest;
+    virtual protected void Shot(){
+        Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+        // print("shot normal");
     }
 }

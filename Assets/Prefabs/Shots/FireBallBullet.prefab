@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd22355742c9c14e8e8b10e6a628010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  energyRequired: 20
   StartShotPrefab: {fileID: 6965807283754419721, guid: 2f835df66ca9bed4bb18c00e823d6581,
     type: 3}
   ExplosionPrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,

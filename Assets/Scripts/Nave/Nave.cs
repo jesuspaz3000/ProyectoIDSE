@@ -5,20 +5,17 @@ using UnityEngine;
 public class Nave : MonoBehaviour
 {
     // Start is called before the first frame update
-    private float health = 10;
+    public float health = 200;
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-
-    public void GettingShot(float damage, GameObject explosion){
-
+    public void BeDamaged(float damage){
+        health -= damage;
     }
 }

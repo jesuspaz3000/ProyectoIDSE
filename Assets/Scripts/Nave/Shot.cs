@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
+    public float energyRequired = 1;
     private float InitialSpeed = 30;
     public GameObject StartShotPrefab;
     public GameObject ExplosionPrefab;

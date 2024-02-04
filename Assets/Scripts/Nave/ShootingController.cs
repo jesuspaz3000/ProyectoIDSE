@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class ShootingController : MonoBehaviour
 {
-    private Shooter shooter; // Referencia a la clase Shooter
+    private ShooterPlayer shooter; // Referencia a la clase ShooterPlayer
 
     void Start()
     {
-        shooter = GetComponent<Shooter>(); // Obtener la referencia del componente Shooter
+        shooter = GetComponent<ShooterPlayer>(); // Obtener la referencia del componente Shooter
     }
 
+    
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && GlobalObjects.Instance.gameController.energia > 0)
         {
             shooter.StartShooting(); // Habilitar el disparo mientras la tecla "espacio" esté presionada
         }
@@ -21,5 +22,6 @@ public class PlayerController : MonoBehaviour
         {
             shooter.StopShooting(); // Deshabilitar el disparo cuando la tecla "espacio" no esté presionada
         }
+        
     }
 }
