@@ -371,7 +371,7 @@ MonoBehaviour:
   vidaText: {fileID: 3797716787161154421}
   ataqueTipo1Text: {fileID: 9202085434257975167}
   ataqueTipo2Text: {fileID: 5987052499924216770}
-  ataqueTipo3Text: {fileID: 5987052499924216770}
+  ataqueTipo3Text: {fileID: 2276633624289587723}
   ataqueEspecialTipo1Text: {fileID: 336459939585333350}
   ataqueEspecialTipo2Text: {fileID: 6547049592886856296}
   ataqueEspecialTipo3Text: {fileID: 1400631423256746958}

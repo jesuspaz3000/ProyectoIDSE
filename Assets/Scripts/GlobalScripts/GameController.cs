@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     public float puntuacionNivel = 0;
     public float puntuacionTotal = 0;
     private float tiempoInicio = 0;
-    private string tiempoTexto = "00:00:0000";
+    // private string tiempoTexto = "00:00:0000";
     public float tiempo = 0;
     // public float vida = 4;
     public GameObject[] disparos;
@@ -45,13 +45,6 @@ public class GameController : MonoBehaviour
     void Update()
     {
         tiempo = Time.time - tiempoInicio;
-        string newTiempoTexto = FormatoTiempo(tiempo);
-        if (tiempoTexto != newTiempoTexto)
-        {
-            tiempoTexto = newTiempoTexto;
-            playerinterface.tiempoText.text = tiempoTexto;
-        }
-
         UpdateCanvasParameters();
     }
     public void IncreaseScore(float score)
@@ -113,7 +106,7 @@ public class GameController : MonoBehaviour
         playerinterface.energiaText.text = "+Energia: " + energia;
         playerinterface.puntuacionNivelText.text = "+Puntos del Nivel: " + puntuacionNivel;
         playerinterface.puntuacionTotalText.text = "+Total: " + puntuacionTotal;
-        playerinterface.tiempoText.text = "+Tiempo: " + tiempoTexto;
+        playerinterface.tiempoText.text = "+Tiempo: " + FormatoTiempo(tiempo);
         playerinterface.vidaText.text = "+Vida: " + navePrincipal.health;
         playerinterface.ataqueTipo1Text.text = "+Tipo 1: " + (disparoActual == 0);
         playerinterface.ataqueTipo2Text.text = "+Tipo 2: " + (disparoActual == 1);

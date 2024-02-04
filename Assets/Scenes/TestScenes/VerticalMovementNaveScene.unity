@@ -272,9 +272,15 @@ MonoBehaviour:
   puntuacionNivel: 0
   puntuacionTotal: 0
   tiempo: 0
-  disparos: 010000
+  disparos:
+  - {fileID: 876714627992951784, guid: 5baedb00e296bf240b55a3dec5023592, type: 3}
+  - {fileID: 295316256617485282, guid: 71b38b9b988101d49998049441b72cd2, type: 3}
+  - {fileID: 876714627992951784, guid: 5baedb00e296bf240b55a3dec5023592, type: 3}
   disparoActual: 0
-  disparosEspeciales: 010000
+  disparosEspeciales:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   disparoEspecialActual: 0
 --- !u!1001 &564235691
 PrefabInstance:

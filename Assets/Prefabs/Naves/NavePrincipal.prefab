@@ -185,6 +185,7 @@ GameObject:
   - component: {fileID: 2556168885997144810}
   - component: {fileID: 4598089877563542551}
   - component: {fileID: 6542150189263517599}
+  - component: {fileID: 1487609565376806941}
   m_Layer: 0
   m_Name: NavePrincipal
   m_TagString: Player
@@ -296,6 +297,18 @@ MonoBehaviour:
   health: 200
   explosionNavePrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,
     type: 3}
+--- !u!114 &1487609565376806941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658541958122150450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8bbb39f9ddcbe9449a7bc109f770878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7736151038927931359
 GameObject:
   m_ObjectHideFlags: 0
