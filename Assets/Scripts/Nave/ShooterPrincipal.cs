@@ -27,8 +27,8 @@ public class ShooterPlayerPrincipal : ShooterPlayer
         }
     }
     override protected void Shot(){
-        GlobalObjects.Instance.gameController.DecreaseEnergy(bulletPrefab.GetComponent<Shot>().energyRequired);
-        Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+        GameObject shot = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+        GlobalObjects.Instance.gameController.DecreaseEnergy(shot.GetComponent<Shot>().energyRequired);
     }
     private void OnTimerChange(float timeRest)
     {

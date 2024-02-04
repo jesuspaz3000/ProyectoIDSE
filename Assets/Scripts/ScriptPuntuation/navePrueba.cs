@@ -43,7 +43,7 @@ public class navePrueba : MonoBehaviour
     {
         Propulsar();
         Rotacion();
-        Disparar();
+        // Disparar();
         MoverLimite();
     }
     private void Propulsar()
@@ -103,15 +103,15 @@ public class navePrueba : MonoBehaviour
         }
     }
 
-    private void Disparar()
-    {
-        if (Input.GetButton("Fire1") && Time.time>nextFire)
-        {
-            nextFire = Time.time + fireRate;
-            GameObject nuevoDisparo = Instantiate(shot, shotSpawn.position, Quaternion.identity);
-            nuevoDisparo.GetComponent<Disparo_Move>().SetNaveVelocity(rb.velocity);
-        }
-    }
+    // private void Disparar()
+    // {
+    //     if (Input.GetButton("Fire1") && Time.time>nextFire)
+    //     {
+    //         nextFire = Time.time + fireRate;
+    //         GameObject nuevoDisparo = Instantiate(shot, shotSpawn.position, Quaternion.identity);
+    //         // nuevoDisparo.GetComponent<Move>().SetNaveVelocity(rb.velocity);
+    //     }
+    // }
 }
 
 

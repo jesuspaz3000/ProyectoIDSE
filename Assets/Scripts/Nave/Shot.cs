@@ -10,6 +10,8 @@ public class Shot : MonoBehaviour
     public GameObject StartShotPrefab;
     public GameObject ExplosionPrefab;
 
+    public float damage = 5;
+
     private ParticleEffect startShotParticles;
     private ParticleEffect explosionParticles;
 
@@ -19,8 +21,8 @@ public class Shot : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         if (rb == null) Debug.LogError("Se requiere un Rigidbody en el objeto.");
-        if (StartShotPrefab == null) Debug.LogError("Se requiere un StartShotParticles en el objeto.");
-        if (ExplosionPrefab == null) Debug.LogError("Se requiere un ExplosionParticles en el objeto.");
+        // if (StartShotPrefab == null) Debug.LogError("Se requiere un StartShotParticles en el objeto.");
+        // if (ExplosionPrefab == null) Debug.LogError("Se requiere un ExplosionParticles en el objeto.");
 
         Initialize();
     }
@@ -34,10 +36,21 @@ public class Shot : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        print("OnTriggerEnter");
-        if (other.gameObject.CompareTag("Nave"))
+        // print("OnTriggerEnter: "+ other.tag+ );
+        Nave nave = other.GetComponentInParent<Nave>();
+        // print("OnTriggerEnter: "+ other.tag + "-> "+ nave);
+
+        if(nave != null)
+        // if (other.gameObject.CompareTag("Nave") || other.gameObject.CompareTag("Player"))
         {
             Explode();
+            print("Explosion");
+            
+            // print(nave);
+            // if(nave == null){
+            // }else{
+            nave.decreaseHealth(damage);
+            // }
         }
     }
 
@@ -49,12 +62,16 @@ public class Shot : MonoBehaviour
     }
 
     private void PlayStartShotExplosion(){
+        if(StartShotPrefab==null) return;
+        
         GameObject explosion = Instantiate(StartShotPrefab, transform.position, Quaternion.identity);
         startShotParticles = explosion.GetComponentInChildren<ParticleEffect>();
         if (startShotParticles == null) Debug.LogError("Se requiere un startShotParticles en el objeto.");
-        // startShotParticles.play(); 
+        startShotParticles.play(); 
     }
     private void PlayShotFinalExplosion(){
+        if(ExplosionPrefab==null) return;
+
         GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         explosionParticles = explosion.GetComponentInChildren<ParticleEffect>();
         if (explosionParticles == null) Debug.LogError("Se requiere un explosionParticles en el objeto.");

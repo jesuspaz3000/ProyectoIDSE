@@ -14,7 +14,7 @@ public class CreatePlaneByContact : MonoBehaviour
     void Start()
     {
         // Obtén el tamaño del objeto actual en el eje vertical
-        planeSize = transform.localScale.y*20;
+        planeSize = transform.localScale.z*10;
         followObject = GlobalObjects.Instance.NavePrincipal;
     }
 
