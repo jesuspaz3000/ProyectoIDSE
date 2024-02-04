@@ -8,8 +8,8 @@ public class PrefabsSpawner : Spawner
 {
     public GameObject[] PrefabsToSpawn;
 
-    public int objectsForEachWave;
-    public float spawnWait = 0f;
+    public int objectsForEachWave = 2;
+    public float waitBetweenObjects = 0f;
     public float startWait = 2.0f;
     public float waitBetweenWaves = 4.0f;
 
@@ -81,29 +81,36 @@ public class PrefabsSpawner : Spawner
         yield return new WaitForSeconds(startWait);
         while (inCoroutine)
         {
-            // objectsForEachWave = Random.Range(1, 20);
-            for (int i = 0; i < objectsForEachWave; i++)
-            {
-                SpawnOnPosition(newPosition());
-                yield return new WaitForSeconds(spawnWait);
-            }
+            StartCoroutine(SpawnOneWave(newPosition));
+            // for (int i = 0; i < objectsForEachWave; i++)
+            // {
+            //     SpawnOnPosition(newPosition());
+            //     yield return new WaitForSeconds(waitBetweenObjects);
+            // }
             yield return new WaitForSeconds(waitBetweenWaves);
         }
     }
-    IEnumerator SpawnWaves()
+    public IEnumerator SpawnWaves()
     {
         print("2Spawn");
         yield return new WaitForSeconds(startWait);
         while (inCoroutine)
         {
-            // objectsForEachWave = Random.Range(1, 20);
-            for (int i = 0; i < objectsForEachWave; i++)
-            {
-                SpawnOnPosition(positionsSpawnGenerator());
-                yield return new WaitForSeconds(spawnWait);
-            }
+            StartCoroutine(SpawnOneWave(positionsSpawnGenerator));
+            // for (int i = 0; i < objectsForEachWave; i++)
+            // {
+            //     (positionsSpawnOnPositionSpawnGenerator());
+            //     yield return new WaitForSeconds(waitBetweenObjects);
+            // }
             yield return new WaitForSeconds(waitBetweenWaves);
         }
+    }
+    public IEnumerator SpawnOneWave(Func<Vector3> newPosition){
+        for (int i = 0; i < objectsForEachWave; i++)
+            {
+                SpawnOnPosition(newPosition());
+                yield return new WaitForSeconds(waitBetweenObjects);
+            }
     }
 
     virtual protected Vector3 positionsSpawnGenerator(){
