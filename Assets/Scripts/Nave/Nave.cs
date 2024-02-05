@@ -33,7 +33,11 @@ public class Nave : MonoBehaviour
     virtual protected void OnDeath()
     {
         explode();
-        Destroy(gameObject, 0.1f);
+        if(CompareTag("Player")){
+            return;
+        }
+        
+        Destroy(gameObject, 0.2f);
     }
     virtual protected void explode(){
         if (explosionNavePrefab != null)

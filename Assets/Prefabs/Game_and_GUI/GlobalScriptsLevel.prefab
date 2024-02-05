@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 875372042304958555}
   - component: {fileID: 4748396629442595690}
   - component: {fileID: 3278968618909742741}
+  - component: {fileID: 837969150028259343}
+  - component: {fileID: 8013749036337579009}
   m_Layer: 0
   m_Name: GlobalScriptsLevel
   m_TagString: Untagged
@@ -74,3 +76,29 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   disparoEspecialActual: 0
+--- !u!114 &837969150028259343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818614542308394715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1523a35cacc0241a7487a9976a1a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuPauseText: {fileID: 0}
+--- !u!114 &8013749036337579009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2818614542308394715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f00faf9f2242fb4883e34b2f2f746ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverText: {fileID: 0}

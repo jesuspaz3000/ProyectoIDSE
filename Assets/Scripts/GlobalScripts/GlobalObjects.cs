@@ -6,6 +6,9 @@ public class GlobalObjects : MonoBehaviour
     public GameObject NavePrincipal;
     public PlayerGameInterface playerGameInterface;
     public GameController gameController;
+
+    public GameOverController gameOverController;
+    public PauseController pauseController;
     public static GlobalObjects Instance
     {
         get

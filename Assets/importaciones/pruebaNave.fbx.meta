@@ -1,0 +1,254 @@
+fileFormatVersion: 2
+guid: 7325eaba9c89ab743b80f7831404fd68
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Add
+    second: {fileID: 2100000, guid: b5b5c99846a29064f93d9b0815b3a892, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Back
+    second: {fileID: 2100000, guid: 6d84bae67468a52429f4154287772145, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Block_inside
+    second: {fileID: 2100000, guid: 9dee3d0c96ad4f94390931013b86baec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gun
+    second: {fileID: 2100000, guid: 7d2e20e1bf86e2847a88f302e1987d5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Nose
+    second: {fileID: 2100000, guid: bff8a8522387ae44ab65ddb558e9d3ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Top and Main
+    second: {fileID: 2100000, guid: 0c66c3ac84e4c594bb4856098d91b8fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wings
+    second: {fileID: 2100000, guid: 6fccd88bc1b0b9948a4b053596798b63, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire_Back
+    second: {fileID: 2100000, guid: dab3035e5cccb9c48aeac5cdcc8adb33, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire_Top and Main
+    second: {fileID: 2100000, guid: a3e44872797c6604b8450c0d7175662d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wire_nose
+    second: {fileID: 2100000, guid: f8b8ada258e467544a2fd03302eb0007, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cubes
+    second: {fileID: 2100000, guid: c7130261772567f4d8ff8f62bdff833d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cubes_yellow
+    second: {fileID: 2100000, guid: bae8aa4c98e8950438530f60c774cfd6, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back_Diffuse
+    second: {fileID: 2800000, guid: 7c4d5007f9f1f784eae708c82a7a628e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Back_Reflection
+    second: {fileID: 2800000, guid: 7eabd5c543cf49d40839edc7e618df1d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Block_Diffuse
+    second: {fileID: 2800000, guid: c8b5bc5c395251a4498a486c5dd2242c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Block_Reflection
+    second: {fileID: 2800000, guid: 174561a32c63e1745b9db340b6afa3c2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gun_Diffuse
+    second: {fileID: 2800000, guid: e279eceb16d77a44b9dc6f06a3085123, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Gun_Reflection
+    second: {fileID: 2800000, guid: 62e602d06e74efc48a3a2d4bbca27255, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nose_Diffuse
+    second: {fileID: 2800000, guid: 9b7963c55270ca14d9912c00255d7377, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Nose_Reflection
+    second: {fileID: 2800000, guid: 215a47e803718dd40bd4d090ec78694c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spaceship_high_Back_Normal
+    second: {fileID: 2800000, guid: 49091a7c602343e4eabf9d957354f2c1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spaceship_high_Gun_Normal
+    second: {fileID: 2800000, guid: 77d03e9745911b441b0c01fca4484965, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spaceship_high_Nose_Normal
+    second: {fileID: 2800000, guid: 96a9106d532492947b6b4e2e7c1737f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spaceship_high_Top_Normal
+    second: {fileID: 2800000, guid: 4bb215a6149e2cb4f94d4e0d6628558b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Spaceship_high_Wing_Normal
+    second: {fileID: 2800000, guid: ea27fbfe8dcd70e4588073b31af9578b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Top and Main_Diffuse
+    second: {fileID: 2800000, guid: 04472f8bf9eb7b546a6b357c1585d66d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Top and Main_Reflection
+    second: {fileID: 2800000, guid: 1b954367b69c6ba4ea09e5638a74c74f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wing_Diffuse
+    second: {fileID: 2800000, guid: ae1c82e8ede074a4f9525d04c2d380e1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wing_Reflection
+    second: {fileID: 2800000, guid: b365439e78e0b7f408a3fbade1d20664, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
