@@ -80,11 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e85b9799409f4e82e542633aad95b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 20
   explosionNavePrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
     type: 3}
   prefabLetOnDeath: {fileID: 5616086061384956697, guid: f794eac1b63cb884d86cddd43fd3cf86,
     type: 3}
+  scoreOnKill: 10
 --- !u!114 &2674769425597443336
 MonoBehaviour:
   m_ObjectHideFlags: 0

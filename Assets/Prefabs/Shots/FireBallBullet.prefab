@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6182629586779448080}
   m_Layer: 0
   m_Name: FireBallBullet
-  m_TagString: Untagged
+  m_TagString: Disparo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,11 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcd22355742c9c14e8e8b10e6a628010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyRequired: 20
+  energyRequired: 1
   StartShotPrefab: {fileID: 6965807283754419721, guid: 2f835df66ca9bed4bb18c00e823d6581,
     type: 3}
   ExplosionPrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,
     type: 3}
+  damage: 5
 --- !u!1 &1525183510547752132
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class GlobalObjetcsInScenes : MonoBehaviour
 {
     
-    public float totalScore;
+    public float totalScore = 0;
     private static GlobalObjetcsInScenes _instance;
     public static GlobalObjetcsInScenes Instance
     {

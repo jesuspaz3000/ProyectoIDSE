@@ -7,7 +7,8 @@ public class DestroyByContact : MonoBehaviour
     // explosion
     public GameObject explosionPrefab;
     public float damage = 5;
-    // private GameController gameController;
+    
+    public float scoreOnDestroy;
 
     void Start()
     {
@@ -26,10 +27,11 @@ public class DestroyByContact : MonoBehaviour
             // GlobalObjects.Instance.gameController.DecreaseVida(damage);
            
         }
-        else if (other.CompareTag("Disparo"))
+        if (other.CompareTag("Disparo"))
         {
             //Disminuir vida y destruirse
             // gameController.IncreaseScore(scoreValue);
+            GlobalObjects.Instance.gameController.IncreaseScore(scoreOnDestroy);
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(other.gameObject);
             Destroy(gameObject);

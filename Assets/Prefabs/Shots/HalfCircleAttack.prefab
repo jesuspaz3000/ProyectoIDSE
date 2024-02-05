@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8542971008130263903}
   m_Layer: 0
   m_Name: HalfCircleAttack
-  m_TagString: Untagged
+  m_TagString: Disparo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,11 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92984e547ab3c354e901f388bd9fd49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyRequired: 30
+  energyRequired: 1
   StartShotPrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
     type: 3}
   ExplosionPrefab: {fileID: 281319859439996211, guid: 58c82217a510a7b42b73367e7c275991,
     type: 3}
+  damage: 5
   incrementoEscala: {x: 3, y: 3, z: 3}
 --- !u!1 &2803162596075128772
 GameObject:

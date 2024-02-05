@@ -5,7 +5,7 @@ using UnityEngine;
 public class Nave : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float health = 200;
+    public float health = 100;
     public GameObject explosionNavePrefab;
     // void Start()
     // {
