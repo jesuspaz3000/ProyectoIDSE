@@ -7,9 +7,11 @@ public class Nave : MonoBehaviour
     // Start is called before the first frame update
     public float health = 100;
     public GameObject explosionNavePrefab;
+    [SerializeField]
+    public AudioClip explosionSound;
     // void Start()
     // {
-
+    //     // explosionSound = GetComponent<AudioClip>();
     // }
     // void Update()
     // {
@@ -36,8 +38,9 @@ public class Nave : MonoBehaviour
         if(CompareTag("Player")){
             return;
         }
-        
-        Destroy(gameObject, 0.2f);
+        // explosionSound.Play();
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+        Destroy(gameObject, 0f);
     }
     virtual protected void explode(){
         if (explosionNavePrefab != null)

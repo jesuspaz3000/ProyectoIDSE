@@ -6,25 +6,30 @@ using UnityEngine;
 public class SeguirObjeto : MonoBehaviour
 {
     public GameObject target;
-    public bool x,y,z;
+    public bool x, y, z;
+
+    private Vector3 offset;
     void Start()
     {
-        
+        offset = transform.position - target.transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector3 newPosition = target.transform.position;
-        if(x){
-            newPosition.x = transform.position.x;
+        Vector3 newPosition = transform.position;
+        // Vector3 toPosition = transform.position + offset
+        if (x)
+        {
+            newPosition.x = target.transform.position.x + offset.x;
         }
-        if(y){
-            newPosition.x = transform.position.y;
+        if (y)
+        {
+            newPosition.y = target.transform.position.y + offset.y;
         }
-        if(z){
-            newPosition.x = transform.position.z;
+        if (z)
+        {
+            newPosition.z = target.transform.position.z + offset.z;
         }
-        transform.position = target.transform.position;
+        transform.position = newPosition;
     }
 }

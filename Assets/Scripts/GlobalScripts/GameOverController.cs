@@ -15,7 +15,6 @@ public class GameOverController : MonoBehaviour
     {
         restart = false;
         gameOver = false;
-        // restartText.gameObject.SetActive(restart);
         gameOverText.gameObject.SetActive(gameOver);
     }
 
@@ -24,6 +23,7 @@ public class GameOverController : MonoBehaviour
     {
         if (restart && Input.GetKeyDown(KeyCode.R))
         {
+            Time.timeScale = 1f;
             gameOver = false;
             gameOverText.gameObject.SetActive(gameOver);
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -31,8 +31,8 @@ public class GameOverController : MonoBehaviour
     }
     public void GameOver()
     {
+        Time.timeScale = 0f;
         gameOverText.gameObject.SetActive(true);
-        // restartText.gameObject.SetActive(true);
         gameOver = true;
         restart = true;
     }

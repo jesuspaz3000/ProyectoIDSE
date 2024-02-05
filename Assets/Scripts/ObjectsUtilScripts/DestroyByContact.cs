@@ -6,12 +6,17 @@ public class DestroyByContact : MonoBehaviour
 {
     // explosion
     public GameObject explosionPrefab;
+
+    [SerializeField]
+    private AudioClip explosionSound;
     public float damage = 5;
     
     public float scoreOnDestroy;
 
     void Start()
     {
+        // explosionSound = GetComponent<AudioClip>();
+        // explosionSound.playOnAwake = false;
     }
     void OnTriggerEnter(Collider other)
     {
@@ -20,10 +25,12 @@ public class DestroyByContact : MonoBehaviour
 
         if(nave != null)
         // if(other.CompareTag("Nave") || other.CompareTag("Player"))
-        {           
+        {   
+            // explosionSound.Play();
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
             nave.decreaseHealth(damage);
+            
             // GlobalObjects.Instance.gameController.DecreaseVida(damage);
            
         }
@@ -31,6 +38,7 @@ public class DestroyByContact : MonoBehaviour
         {
             //Disminuir vida y destruirse
             // gameController.IncreaseScore(scoreValue);
+            // explosionSound.Play();
             GlobalObjects.Instance.gameController.IncreaseScore(scoreOnDestroy);
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(other.gameObject);
@@ -44,4 +52,9 @@ public class DestroyByContact : MonoBehaviour
     virtual protected void OnContact(Collider other){
 
     } 
+    void OnDestroy(){
+        // explosionSound.Play();
+        // GlobalObjects.Instance.audioSource.PlayOneShot();
+        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
+    }
 }

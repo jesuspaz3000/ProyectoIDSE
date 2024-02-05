@@ -83,6 +83,7 @@ MonoBehaviour:
   health: 20
   explosionNavePrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
     type: 3}
+  explosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
   prefabLetOnDeath: {fileID: 5616086061384956697, guid: f794eac1b63cb884d86cddd43fd3cf86,
     type: 3}
   scoreOnKill: 10
@@ -112,10 +113,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cca64ef50111a44ab9ac417143b772e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velodidadMovimiento: 10
+  velodidadMovimiento: 40
   rangoY: 30
   rangoX: 60
-  distaniaMinima: 1
+  distaniaMinima: 110
 --- !u!114 &8028195662293087843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,17 +150,17 @@ PrefabInstance:
     - target: {fileID: 5645290594047274441, guid: 35614d4c95c3f45438fb17a79ef8a73f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5645290594047274441, guid: 35614d4c95c3f45438fb17a79ef8a73f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5645290594047274441, guid: 35614d4c95c3f45438fb17a79ef8a73f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.5
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 5645290594047274441, guid: 35614d4c95c3f45438fb17a79ef8a73f,
         type: 3}

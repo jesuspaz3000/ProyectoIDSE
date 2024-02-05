@@ -7,7 +7,7 @@ using UnityEngine;
 public class ShotScaling : Shot
 {
     public Vector3 incrementoEscala = new Vector3(0.1f, 0.1f, 0.1f);
-    private Vector3 initialEscale;
+    private Vector3 initialEscale = new Vector3(1,1,1);
 
     void Update()
     {

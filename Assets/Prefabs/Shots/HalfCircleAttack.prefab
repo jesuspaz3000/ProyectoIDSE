@@ -97,11 +97,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyRequired: 1
+  InitialSpeed: 50
   StartShotPrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
     type: 3}
+  StartShotSound: {fileID: 8300000, guid: 20d938125d2a5424fa47c309c077b8b2, type: 3}
   ExplosionPrefab: {fileID: 281319859439996211, guid: 58c82217a510a7b42b73367e7c275991,
     type: 3}
+  ExplosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
   damage: 5
+  destroyOnCollision: 1
   incrementoEscala: {x: 3, y: 3, z: 3}
 --- !u!1 &2803162596075128772
 GameObject:

@@ -6,11 +6,15 @@ using UnityEngine;
 public class Shot : MonoBehaviour
 {
     public float energyRequired = 1;
-    private float InitialSpeed = 30;
+    public float InitialSpeed = 50;
     public GameObject StartShotPrefab;
+    public AudioClip StartShotSound;
     public GameObject ExplosionPrefab;
+    public AudioClip ExplosionSound;
 
     public float damage = 5;
+
+    public bool destroyOnCollision = true;
 
     private ParticleEffect startShotParticles;
     private ParticleEffect explosionParticles;
@@ -58,12 +62,17 @@ public class Shot : MonoBehaviour
     {
         print("Explosión: " + transform.position);
         PlayShotFinalExplosion();
-        Destroy(gameObject);
+        
+        if(destroyOnCollision){
+            Destroy(gameObject);
+        }
     }
 
     private void PlayStartShotExplosion(){
         if(StartShotPrefab==null) return;
         
+        AudioSource.PlayClipAtPoint(StartShotSound, transform.position);
+
         GameObject explosion = Instantiate(StartShotPrefab, transform.position, Quaternion.identity);
         startShotParticles = explosion.GetComponentInChildren<ParticleEffect>();
         if (startShotParticles == null) Debug.LogError("Se requiere un startShotParticles en el objeto.");
@@ -71,6 +80,8 @@ public class Shot : MonoBehaviour
     }
     private void PlayShotFinalExplosion(){
         if(ExplosionPrefab==null) return;
+
+        AudioSource.PlayClipAtPoint(ExplosionSound, transform.position);
 
         GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         explosionParticles = explosion.GetComponentInChildren<ParticleEffect>();

@@ -267,9 +267,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5235595aea0aaaf439328275bb2790c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 200
+  health: 100
   explosionNavePrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,
     type: 3}
+  explosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
 --- !u!114 &1487609565376806941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +308,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 88
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!1 &7736151038927931359
 GameObject:

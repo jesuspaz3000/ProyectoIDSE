@@ -9,6 +9,8 @@ public class GlobalObjects : MonoBehaviour
 
     public GameOverController gameOverController;
     public PauseController pauseController;
+    public AudioSource audioSource;
+    
     public static GlobalObjects Instance
     {
         get

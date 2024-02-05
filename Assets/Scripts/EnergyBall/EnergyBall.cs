@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnergyBall : MonoBehaviour
 {
     public int energyMount = 2;
+    public AudioClip soundCollect;
     private Rigidbody rb;
     void Start()
     {
@@ -32,8 +33,10 @@ public class EnergyBall : MonoBehaviour
         }
     }
     void CollectBall(){
+        
         print("EnergyBall Collected ");
         GlobalObjects.Instance.gameController.IncreaseEnergy(energyMount);
         Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(soundCollect, transform.position);
     }
 }

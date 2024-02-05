@@ -8,6 +8,7 @@ public class PrefabsSpawner : Spawner
 {
     public GameObject[] PrefabsToSpawn;
 
+    public int numWaves = -1;
     public int objectsForEachWave = 2;
     public float waitBetweenObjects = 0f;
     public float startWait = 2.0f;
@@ -17,16 +18,20 @@ public class PrefabsSpawner : Spawner
     private Coroutine currentCoroutine;
     private bool inCoroutine = false;
     // public Func<Vector3> positionsSpawnGenerator;
+    private int currentNVave = 0;
 
-    void Start(){
+    void Start()
+    {
         Initicalize();
-        if(playOnAwake){
-            
+        if (playOnAwake)
+        {
+
             inCoroutine = true;
             StartSpawnWaves();
         }
     }
-    virtual protected void Initicalize(){
+    virtual protected void Initicalize()
+    {
         // positionsSpawnGenerator = () => transform.position;
     }
     override public GameObject Spawn()
@@ -67,11 +72,12 @@ public class PrefabsSpawner : Spawner
     public void StartSpawnWavesInPosition(Vector3 position)
     {
         inCoroutine = true;
-        currentCoroutine = StartCoroutine(SpawnWavesInPositions(()=>position));
+        currentCoroutine = StartCoroutine(SpawnWavesInPositions(() => position));
     }
-    
+
     public void StopSpawn()
     {
+        currentNVave = 0;
         inCoroutine = false;
         // StopCoroutine(currentCoroutine);
     }
@@ -81,41 +87,54 @@ public class PrefabsSpawner : Spawner
         yield return new WaitForSeconds(startWait);
         while (inCoroutine)
         {
-            StartCoroutine(SpawnOneWave(newPosition));
-            // for (int i = 0; i < objectsForEachWave; i++)
-            // {
-            //     SpawnOnPosition(newPosition());
-            //     yield return new WaitForSeconds(waitBetweenObjects);
-            // }
-            yield return new WaitForSeconds(waitBetweenWaves);
+            if (numWaves < 0 || currentNVave >= numWaves)
+            {
+                currentNVave++;
+                StartCoroutine(SpawnOneWave(newPosition));
+                // for (int i = 0; i < objectsForEachWave; i++)
+                // {
+                //     SpawnOnPosition(newPosition());
+                //     yield return new WaitForSeconds(waitBetweenObjects);
+                // }
+                yield return new WaitForSeconds(waitBetweenWaves);
+            }
+
         }
+        currentNVave = 0;
     }
     public IEnumerator SpawnWaves()
     {
         print("2Spawn");
+
         yield return new WaitForSeconds(startWait);
         while (inCoroutine)
         {
-            StartCoroutine(SpawnOneWave(positionsSpawnGenerator));
-            // for (int i = 0; i < objectsForEachWave; i++)
-            // {
-            //     (positionsSpawnOnPositionSpawnGenerator());
-            //     yield return new WaitForSeconds(waitBetweenObjects);
-            // }
-            yield return new WaitForSeconds(waitBetweenWaves);
+            if (numWaves < 0 || currentNVave >= numWaves)
+            {
+                currentNVave++;
+                StartCoroutine(SpawnOneWave(positionsSpawnGenerator));
+                // for (int i = 0; i < objectsForEachWave; i++)
+                // {
+                //     (positionsSpawnOnPositionSpawnGenerator());
+                //     yield return new WaitForSeconds(waitBetweenObjects);
+                // }
+                yield return new WaitForSeconds(waitBetweenWaves);
+            }
+
+        }
+        currentNVave = 0;
+    }
+    public IEnumerator SpawnOneWave(Func<Vector3> newPosition)
+    {
+        for (int i = 0; i < objectsForEachWave; i++)
+        {
+            SpawnOnPosition(newPosition());
+            yield return new WaitForSeconds(waitBetweenObjects);
         }
     }
-    public IEnumerator SpawnOneWave(Func<Vector3> newPosition){
-        for (int i = 0; i < objectsForEachWave; i++)
-            {
-                SpawnOnPosition(newPosition());
-                yield return new WaitForSeconds(waitBetweenObjects);
-            }
-    }
 
-    virtual protected Vector3 positionsSpawnGenerator(){
+    virtual protected Vector3 positionsSpawnGenerator()
+    {
         return transform.position;
     }
-
-    
 }

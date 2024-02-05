@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 12.5, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6672280889139597935}
@@ -99,11 +99,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   energyRequired: 1
+  InitialSpeed: 50
   StartShotPrefab: {fileID: 6965807283754419721, guid: 2f835df66ca9bed4bb18c00e823d6581,
     type: 3}
+  StartShotSound: {fileID: 8300000, guid: 20d938125d2a5424fa47c309c077b8b2, type: 3}
   ExplosionPrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,
     type: 3}
+  ExplosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
   damage: 5
+  destroyOnCollision: 1
 --- !u!1 &1525183510547752132
 GameObject:
   m_ObjectHideFlags: 0
