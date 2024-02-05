@@ -15,10 +15,12 @@ public class DestroyByContact : MonoBehaviour
     public int scoreValue;
     public int scoreDaño;
     private GameController gameController;
+    private GameOverController gameOverController;//GAME OVER
 
     void Start()
     {
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        gameOverController = GameObject.FindWithTag("GameController").GetComponent<GameOverController>();//GAME OVER
     }
     void OnTriggerEnter(Collider other)
     {
@@ -31,6 +33,8 @@ public class DestroyByContact : MonoBehaviour
                 Instantiate(explosionPlayer, transform.position, transform.rotation);
                 Destroy(other.gameObject);
                 Destroy(gameObject);
+                gameOverController.GameOver();//GAME OVER
+                gameController.SetStatusGame(false);
             }
             else
             {

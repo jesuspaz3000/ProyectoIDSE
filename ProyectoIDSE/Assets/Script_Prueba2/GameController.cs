@@ -22,11 +22,15 @@ public class GameController : MonoBehaviour
     //Vida
     private int vida;
     public Text vidaText;
+
+    //Status Game
+    private bool StateGame;
     // Start is called before the first frame update
     void Start()
     {
         score = 100;
         vida = 5;
+        StateGame = true;
         UpdateCanvas();
         StartCoroutine(SpawnAsteroides());
     }
@@ -39,9 +43,7 @@ public class GameController : MonoBehaviour
         while (true)
         {
             AsteroidesCount = Random.Range(1, 20);
-            if (stateWinner == true) { 
-                break; 
-            }
+            if (stateWinner == true) { break; }
             for (int i = 0; i < AsteroidesCount; i++)
             {
                 Vector3 cameraPosition = Camera.transform.position;
@@ -50,6 +52,7 @@ public class GameController : MonoBehaviour
                 Instantiate(enemigo, spawnPosition, Quaternion.identity);
                 yield return new WaitForSeconds(spawnWait);
             }
+            if(StateGame == false) { break; }
             yield return new WaitForSeconds(oleadaWait);
         }
     }
@@ -75,5 +78,9 @@ public class GameController : MonoBehaviour
         //disminuir puntaje
         score -= 20;
         UpdateCanvas();
+    }
+    public void SetStatusGame(bool status)
+    {
+        StateGame = status;
     }
 }
