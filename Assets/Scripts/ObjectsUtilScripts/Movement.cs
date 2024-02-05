@@ -6,7 +6,7 @@ public class SetVelocity : MonoBehaviour
 {
     private Rigidbody rb;
     // public GameObject nave;
-    private Vector3 velocity;
+    public Vector3 velocity;
     // public float speedV = 20.0f;
     // Start is called before the first frame update
     void Awake()
