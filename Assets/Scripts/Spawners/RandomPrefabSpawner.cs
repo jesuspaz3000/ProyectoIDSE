@@ -36,19 +36,19 @@ public class PrefabsSpawner : Spawner
     }
     override public GameObject Spawn()
     {
-        return Instantiate(getRandomPrefab(), transform.position, Quaternion.identity);
+        return Instantiate(getRandomPrefab(), transform.position, transform.rotation);
     }
     public GameObject Spawn(int index)
     {
-        return Instantiate(getPrefab(index), transform.position, Quaternion.identity);
+        return Instantiate(getPrefab(index), transform.position, transform.rotation);
     }
     override public GameObject SpawnOnPosition(Vector3 position)
     {
-        return Instantiate(getRandomPrefab(), position, Quaternion.identity);
+        return Instantiate(getRandomPrefab(), position, transform.rotation);
     }
     public GameObject SpawnOnPosition(Vector3 position, int index)
     {
-        return Instantiate(getPrefab(index), position, Quaternion.identity);
+        return Instantiate(getPrefab(index), position, transform.rotation);
     }
     public GameObject getRandomPrefab()
     {

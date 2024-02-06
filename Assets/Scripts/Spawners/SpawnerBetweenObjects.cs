@@ -20,7 +20,7 @@ public class SpawnerBetweenObjects : PrefabsSpawner
 
         actualObject = actualObject % objectsForEachWave;
 
-        Vector3 relativePosition = (SecondObject.transform.position - FirtsObject.transform.position) / (objectsForEachWave -1) * actualObject;
+        Vector3 relativePosition = (SecondObject.transform.position - FirtsObject.transform.position) / ((float) objectsForEachWave -1) * (float) actualObject;
 
         actualObject++;
         return FirtsObject.transform.position + relativePosition;

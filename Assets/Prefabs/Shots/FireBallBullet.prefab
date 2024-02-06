@@ -102,7 +102,7 @@ MonoBehaviour:
   InitialSpeed: 50
   StartShotPrefab: {fileID: 6965807283754419721, guid: 2f835df66ca9bed4bb18c00e823d6581,
     type: 3}
-  StartShotSound: {fileID: 8300000, guid: 20d938125d2a5424fa47c309c077b8b2, type: 3}
+  StartShotSound: {fileID: 8300000, guid: 7b5a328f611986d4ababdc1023c60b59, type: 3}
   ExplosionPrefab: {fileID: 2265902882033542595, guid: 57a948841b3ab9544930fe396ebf2f12,
     type: 3}
   ExplosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8407688492791569971}
   - component: {fileID: 7915557961786210746}
   - component: {fileID: 8542971008130263903}
+  - component: {fileID: 6559804988360204982}
   m_Layer: 0
   m_Name: HalfCircleAttack
   m_TagString: Disparo
@@ -100,13 +101,26 @@ MonoBehaviour:
   InitialSpeed: 50
   StartShotPrefab: {fileID: 8565796753324056510, guid: 14174fc8668995847b0eb45b170c46ce,
     type: 3}
-  StartShotSound: {fileID: 8300000, guid: 20d938125d2a5424fa47c309c077b8b2, type: 3}
+  StartShotSound: {fileID: 8300000, guid: 7b5a328f611986d4ababdc1023c60b59, type: 3}
   ExplosionPrefab: {fileID: 281319859439996211, guid: 58c82217a510a7b42b73367e7c275991,
     type: 3}
-  ExplosionSound: {fileID: 8300000, guid: 395ebd3d6fca1ec40a6b3c7415c1edb7, type: 3}
+  ExplosionSound: {fileID: 8300000, guid: 7858ae9b1e61f154b9137ff4d09da9c1, type: 3}
   damage: 5
-  destroyOnCollision: 1
+  destroyOnCollision: 0
   incrementoEscala: {x: 3, y: 3, z: 3}
+--- !u!114 &6559804988360204982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295316256617485282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7c855629705d444aca58156e2e054b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 2
 --- !u!1 &2803162596075128772
 GameObject:
   m_ObjectHideFlags: 0

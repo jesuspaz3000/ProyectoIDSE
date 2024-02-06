@@ -50,6 +50,9 @@ MonoBehaviour:
   NavePrincipal: {fileID: 0}
   playerGameInterface: {fileID: 0}
   gameController: {fileID: 3278968618909742741}
+  gameOverController: {fileID: 8013749036337579009}
+  pauseController: {fileID: 837969150028259343}
+  audioSource: {fileID: 0}
 --- !u!114 &3278968618909742741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,12 +67,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   energia: 100
   puntuacionNivel: 0
-  puntuacionTotal: 0
   tiempo: 0
   disparos:
+  - {fileID: 876714627992951784, guid: 2b4f66f9a9c58074ba11c5d2ca6ac6bf, type: 3}
   - {fileID: 876714627992951784, guid: 5baedb00e296bf240b55a3dec5023592, type: 3}
   - {fileID: 295316256617485282, guid: 71b38b9b988101d49998049441b72cd2, type: 3}
-  - {fileID: 876714627992951784, guid: 5baedb00e296bf240b55a3dec5023592, type: 3}
   disparoActual: 0
   disparosEspeciales:
   - {fileID: 0}

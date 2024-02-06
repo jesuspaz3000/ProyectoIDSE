@@ -11,7 +11,8 @@ public class Shot : MonoBehaviour
     public AudioClip StartShotSound;
     public GameObject ExplosionPrefab;
     public AudioClip ExplosionSound;
-
+    public float volumenInicio= 1;
+    public float volumanFinal= 1;
     public float damage = 5;
 
     public bool destroyOnCollision = true;
@@ -71,7 +72,7 @@ public class Shot : MonoBehaviour
     private void PlayStartShotExplosion(){
         if(StartShotPrefab==null) return;
         
-        AudioSource.PlayClipAtPoint(StartShotSound, transform.position);
+        AudioSource.PlayClipAtPoint(StartShotSound, transform.position, volumenInicio);
 
         GameObject explosion = Instantiate(StartShotPrefab, transform.position, Quaternion.identity);
         startShotParticles = explosion.GetComponentInChildren<ParticleEffect>();
@@ -81,7 +82,7 @@ public class Shot : MonoBehaviour
     private void PlayShotFinalExplosion(){
         if(ExplosionPrefab==null) return;
 
-        AudioSource.PlayClipAtPoint(ExplosionSound, transform.position);
+        AudioSource.PlayClipAtPoint(ExplosionSound, transform.position, volumanFinal);
 
         GameObject explosion = Instantiate(ExplosionPrefab, transform.position, Quaternion.identity);
         explosionParticles = explosion.GetComponentInChildren<ParticleEffect>();

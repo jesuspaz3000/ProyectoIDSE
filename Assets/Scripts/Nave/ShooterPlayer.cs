@@ -15,7 +15,7 @@ public class ShooterPlayer : MonoBehaviour
 
     const string BULLET_SPAWNER = "BulletSpawner";
 
-    protected float bulletReloadTime = 0.5f;
+    public float bulletReloadTime = 0.8f;
     protected float _tiempoPasadoDesdeUltimaBala = 0.5f;
     
     virtual protected float tiempoPasadoDesdeUltimaBala

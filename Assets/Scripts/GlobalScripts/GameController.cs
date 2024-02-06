@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         navePrincipal = GlobalObjects.Instance.NavePrincipal.GetComponent<Nave>();
         shooterNavePrincipal = GlobalObjects.Instance.NavePrincipal.GetComponent<ShooterPlayer>();
 
-        maxVida = navePrincipal.health;
+        maxVida = navePrincipal.getHealth();
         maxEnergy = energia;
     }
 
@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
         tiempo = Time.time - tiempoInicio;
         UpdateCanvasParameters();
 
-        if (navePrincipal.health <= 0)
+        if (navePrincipal.getHealth() <= 0)
         {
             GlobalObjects.Instance.gameOverController.GameOver();
         }
@@ -79,16 +79,16 @@ public class GameController : MonoBehaviour
     }
     public float GetVida()
     {
-        return navePrincipal.health;
+        return navePrincipal.getHealth();
     }
     public void IncreaseVida(float mount)
     {
-        navePrincipal.health += mount;
+        navePrincipal.increaseHealth(mount);
     }
     public void DecreaseVida(float mount)
     {
-        navePrincipal.health -= mount;
-        if (navePrincipal.health <= 0)
+        navePrincipal.decreaseHealth(mount);
+        if (navePrincipal.getHealth() <= 0)
         {
             print("GameOver");
         }
@@ -139,9 +139,9 @@ public class GameController : MonoBehaviour
         playerinterface.tiempoText.text = "T: " + FormatoTiempo(tiempo);
 
         Vector3 currentVidaBarra = playerinterface.vidaNaveText.transform.localScale;
-        // currentVidaBarra.x = 1f / maxVida * navePrincipal.health;
-        playerinterface.vidaNaveText.localScale = new Vector3(1f / 1f / maxVida * navePrincipal.health, 1, 1); ;
+        // currentVidaBarra.x = 1f / maxVida * navePrincipal.getHealth();
+        playerinterface.vidaNaveText.localScale = new Vector3(1f / maxVida * navePrincipal.getHealth(), 1, 1);
 
-        // playerinterface.vidaNaveText.text = "+Vida nave: "+navePrincipal.health;
+        // playerinterface.vidaNaveText.text = "+Vida nave: "+navePrincipal.getHealth();
     }
 }

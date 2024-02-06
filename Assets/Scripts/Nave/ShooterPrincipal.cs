@@ -26,12 +26,14 @@ public class ShooterPlayerPrincipal : ShooterPlayer
             }
         }
     }
-    override protected void Shot(){
+    override protected void Shot()
+    {
         GameObject shot = Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
         GlobalObjects.Instance.gameController.DecreaseEnergy(shot.GetComponent<Shot>().energyRequired);
     }
     private void OnTimerChange(float timeRest)
     {
-        textoTiempoDisparo.text = "" + timeRest;
+        if (textoTiempoDisparo != null)
+            textoTiempoDisparo.text = "" + timeRest;
     }
 }

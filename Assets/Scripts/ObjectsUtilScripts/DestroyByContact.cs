@@ -27,6 +27,7 @@ public class DestroyByContact : MonoBehaviour
         // if(other.CompareTag("Nave") || other.CompareTag("Player"))
         {   
             // explosionSound.Play();
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             Instantiate(explosionPrefab, transform.position, transform.rotation);
             Destroy(gameObject);
             nave.decreaseHealth(damage);
@@ -39,9 +40,10 @@ public class DestroyByContact : MonoBehaviour
             //Disminuir vida y destruirse
             // gameController.IncreaseScore(scoreValue);
             // explosionSound.Play();
+            AudioSource.PlayClipAtPoint(explosionSound, transform.position);
             GlobalObjects.Instance.gameController.IncreaseScore(scoreOnDestroy);
             Instantiate(explosionPrefab, transform.position, transform.rotation);
-            Destroy(other.gameObject);
+            // Destroy(other.gameObject);
             Destroy(gameObject);
         }
         else
@@ -52,9 +54,9 @@ public class DestroyByContact : MonoBehaviour
     virtual protected void OnContact(Collider other){
 
     } 
-    void OnDestroy(){
+    // void OnDestroy(){
         // explosionSound.Play();
         // GlobalObjects.Instance.audioSource.PlayOneShot();
-        AudioSource.PlayClipAtPoint(explosionSound, transform.position);
-    }
+        
+    // }
 }

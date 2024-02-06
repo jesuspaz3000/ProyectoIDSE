@@ -50,13 +50,22 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 4.34
+        m_Name: SpawnRate
+        m_Overridden: 1
+      - m_Value: 0.6
+        m_Name: Size
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 8.714554, z: 517.1551, w: 0}
+        m_Name: TrailsColor
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
@@ -120,11 +129,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2576777658787145045}
-  - component: {fileID: 1644080549537531132}
   - component: {fileID: 2794612190744505466}
   - component: {fileID: 3717930595578051334}
+  - component: {fileID: 846191562357028953}
   m_Layer: 0
-  m_Name: EnergyBall
+  m_Name: HealthBall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -146,20 +155,6 @@ Transform:
   - {fileID: 8795117064867670099}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1644080549537531132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5616086061384956697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e81000b44f5dac4e8db81e1323f1daf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  energyMount: 30
-  soundCollect: {fileID: 8300000, guid: e0e8fa7c67e9e9649be627d7eeb4feb4, type: 3}
 --- !u!54 &2794612190744505466
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -206,5 +201,19 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1.5, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &846191562357028953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5616086061384956697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78ab4351105533942aba8d8d9c65665e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthMount: 10
+  soundCollect: {fileID: 0}

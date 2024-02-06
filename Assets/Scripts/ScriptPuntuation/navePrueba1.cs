@@ -10,6 +10,8 @@ public class MovimientoNave : MonoBehaviour
 
     public float frenadoRapido = 2f;
 
+    private AudioSource audioSource;
+
     private Rigidbody rb;
 
     void Start()
@@ -68,21 +70,29 @@ public class MovimientoNave : MonoBehaviour
             fuerzaAplicar_y = fuerzaAplicadaY;
         }
         if (GlobalObjects.Instance.gameController.energia > 0)
-            rb.AddForce(new Vector3(fuerzaAplicar_x, fuerzaAplicar_y, 0), ForceMode.VelocityChange);
+            rb.AddForce(new Vector3(fuerzaAplicar_x, fuerzaAplicar_y, 0), ForceMode.Force);
         // rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y, 0);
 
-        if (movimiento == Vector3.zero)
+        if (movimiento != Vector3.zero)
         {
-            rb.velocity = new Vector3(
-                Mathf.Lerp(rb.velocity.x * 0.6f, 0f, Time.deltaTime * frenadoRapido),
-                Mathf.Lerp(rb.velocity.y * 0.6f, 0f, Time.deltaTime * frenadoRapido),
-                0f
-            );
+            if (!audioSource.isPlaying)
+                audioSource.Play();
         }
         else
         {
-            GlobalObjects.Instance.gameController.DecreaseEnergy(movimiento.magnitude * Time.deltaTime);
+            audioSource.Stop();
         }
+        // {
+        //     rb.velocity = new Vector3(
+        //         Mathf.Lerp(rb.velocity.x * 0.6f, 0f, Time.deltaTime * frenadoRapido),
+        //         Mathf.Lerp(rb.velocity.y * 0.6f, 0f, Time.deltaTime * frenadoRapido),
+        //         0f
+        //     );
+        // }
+        // else
+        // {
+        //     GlobalObjects.Instance.gameController.DecreaseEnergy(movimiento.magnitude * Time.deltaTime);
+        // }
     }
 
 
