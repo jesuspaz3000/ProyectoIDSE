@@ -53,12 +53,13 @@ public class WinnerControllerTrigger : MonoBehaviour
 
     private void Quit()
     {
-        throw new NotImplementedException();
+        GlobalObjetcsInScenes.Instance.ChangeToScene_Menu();
     }
 
     private void NextLevel()
     {
-        throw new NotImplementedException();
+        Time.timeScale = 1f;
+        GlobalObjetcsInScenes.Instance.ChangeToNextLevel();
     }
 
     void OnTriggerEnter(Collider other)
@@ -77,6 +78,8 @@ public class WinnerControllerTrigger : MonoBehaviour
     }
     private void ReStart()
     {
+        GlobalObjetcsInScenes.Instance.totalScore-=GlobalObjects.Instance.gameController.puntuacionNivel;
+        GlobalObjects.Instance.gameController.puntuacionNivel = 0;
         isWinMenu = false;
         Time.timeScale = 1f;
         menuWin.SetActive(isWinMenu);
